@@ -1,0 +1,33 @@
+<nav class="fixed bottom-0 left-0 right-0 z-40 bg-surface border-t border-border shadow-card">
+    <div class="pb-[env(safe-area-inset-bottom)]">
+        <div class="grid grid-cols-5 h-20">
+            @for (item of navigationItems.slice(0,2); track item.route) {
+            <a [routerLink]="item.route" routerLinkActive #rla="routerLinkActive" [routerLinkActiveOptions]="{exact:true}"
+                class="flex flex-col items-center justify-center gap-1 text-text-secondary transition-colors duration-200">
+                <app-icon [name]="item.icon" 
+                [className]="rla.isActive ? 'text-primary text-2xl': 'text-text-secondary text-2xl'"></app-icon>
+                <span class="text-xs font-medium"
+                [class.text-primary]="rla.isActive"
+                [class.text-text-secondary]="!rla.isActive">
+                    {{item.label}}
+                </span>
+            </a>
+            }
+
+            <div></div>
+
+            @for (item of navigationItems.slice(2); track item.route) {
+            <a [routerLink]="item.route" routerLinkActive #rla="routerLinkActive" [routerLinkActiveOptions]="{exact:true}"
+                class="flex flex-col items-center justify-center gap-1 text-text-secondary transition-colors duration-200">
+                <app-icon [name]="item.icon" [className]="rla.isActive ? 'text-primary text-2xl': 'text-text-secondary text-2xl'"></app-icon>
+                <span class="text-xs font-medium"
+                [class.text-primary]="rla.isActive"
+                [class.text-text-secondary]="!rla.isActive">
+                    {{item.label}}
+                </span>
+            </a>
+            }
+        </div>
+    </div>
+
+</nav>

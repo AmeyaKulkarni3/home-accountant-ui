@@ -1,0 +1,23 @@
+<button
+    mat-fab
+    [matMenuTriggerFor]="menu"
+    class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 flex h-14 w-14 items-center
+         justify-center rounded-full bg-primary text-white shadow-lg">
+
+    <app-icon name="add" className="text-text text-4xl"></app-icon>
+</button>
+
+<mat-menu #menu="matMenu">
+    <button
+        mat-menu-item
+        (click)="addIncome.emit()">
+        <app-icon name="trending_up" className="text-income"></app-icon>
+        <span>Add Income</span>
+    </button>
+    <button
+        mat-menu-item
+        (click)="addExpense.emit()">
+        <app-icon name="trending_down" className="text-expense"></app-icon>
+        <span>Add Expense</span>
+    </button>
+</mat-menu>

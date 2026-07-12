@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { GoogleApi, GoogleCredentialResponse } from '../auth/google.type';
-import { environment } from '../../../environment/environment.development';
+import { GoogleApi, GoogleCredentialResponse } from '../google.type';
+import { environment } from '../../../../environment/environment.development';
 
 declare global {
   interface Window {
@@ -11,7 +11,7 @@ declare global {
 @Injectable({
   providedIn: 'root',
 })
-export class GoogleSigninService {
+export class GoogleIdentityService {
     
   renderLoginButton(element: HTMLElement, callback: (credential: string) => void): void {
     this.initialize(callback);

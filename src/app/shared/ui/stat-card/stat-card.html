@@ -1,0 +1,14 @@
+<div class="rounded-card bg-surface p-4 shadow-card border border-border">
+    <div class="flex items-center justify-between">
+        <div>
+            <p class="text-sm text-text-secondary">
+                {{title()}}
+            </p>
+            <h2 class="mt-2 text-xl font-bold text-text">
+                {{value() | currency:'INR':'symbol':'1.1-1'}}
+            </h2>
+        </div>
+        <app-icon [name]="icon()" [className]="iconColor() + ' text-3xl'"></app-icon>
+    </div>
+
+</div>

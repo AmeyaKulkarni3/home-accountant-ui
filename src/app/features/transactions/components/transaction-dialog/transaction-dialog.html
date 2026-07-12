@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>
+    {{title}}
+</h2>
+<mat-dialog-content>
+    <app-transaction-form [form]="form" [categories]="filteredCategories"></app-transaction-form>
+</mat-dialog-content>
+<mat-dialog-actions align="end" class="flex gap-3">
+    <button mat-button (click)="close()">
+        Cancel
+    </button>
+
+    <button mat-flat-button (click)="save()">
+        Save
+    </button>
+</mat-dialog-actions>

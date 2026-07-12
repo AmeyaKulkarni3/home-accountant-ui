@@ -1,0 +1,11 @@
+<div class="flex h-dvh flex-col bg-background">
+
+    <main class="flex-1 overflow-y-auto pb-24 px-4">
+        <router-outlet></router-outlet>
+    </main>
+
+    <app-floating-action-button (addIncome)="onAddIncome()" (addExpense)="onAddExpense()"/>
+
+    <app-bottom-nav/>
+
+</div>
